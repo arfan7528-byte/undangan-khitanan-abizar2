@@ -1,0 +1,764 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Cormorant Garamond", serif;
+  background: #f7f3e8;
+  color: #214331;
+  line-height: 1.8;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* =========================
+   COVER
+========================= */
+
+.cover {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 30px;
+
+  color: white;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      #286447 0%,
+      #173f2a 45%,
+      #0c281a 100%
+    );
+}
+
+
+/* BULAN */
+
+.moon {
+  font-size: 70px;
+  color: #e4bd45;
+
+  animation:
+    moonFloat 4s ease-in-out infinite;
+}
+
+
+@keyframes moonFloat {
+
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+}
+
+
+/* BINTANG */
+
+.stars,
+.stars::before,
+.stars::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  background: #f4d875;
+
+  border-radius: 50%;
+
+  box-shadow:
+    40px 80px #f4d875,
+    100px 180px #f4d875,
+    180px 70px #f4d875,
+    250px 150px #f4d875,
+    330px 90px #f4d875,
+    420px 200px #f4d875,
+    520px 100px #f4d875,
+    620px 180px #f4d875,
+    720px 70px #f4d875,
+    800px 220px #f4d875,
+    900px 120px #f4d875,
+    1000px 250px #f4d875;
+
+  opacity: .5;
+
+  animation: twinkle 3s infinite alternate;
+}
+
+
+@keyframes twinkle {
+
+  from {
+    opacity: .2;
+  }
+
+  to {
+    opacity: .9;
+  }
+
+}
+
+
+.cover-content {
+
+  position: relative;
+  z-index: 5;
+
+  max-width: 650px;
+
+  animation: coverIn 1.5s ease;
+}
+
+
+@keyframes coverIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+.subtitle {
+
+  letter-spacing: 5px;
+  font-size: 15px;
+}
+
+
+.cover h1 {
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(42px, 9vw, 72px);
+
+  line-height: 1.15;
+
+  margin: 20px 0;
+
+  color: #f1cf61;
+
+  text-shadow:
+    0 4px 15px rgba(0,0,0,.4);
+}
+
+
+.ornament {
+
+  color: #d5ad38;
+
+  font-size: 20px;
+
+  margin: 20px;
+}
+
+
+.open-button {
+
+  margin-top: 30px;
+
+  border: none;
+
+  padding: 15px 30px;
+
+  border-radius: 50px;
+
+  background: #d4af37;
+
+  color: #193c29;
+
+  font-family: inherit;
+
+  font-size: 17px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.3);
+
+  transition: .3s;
+
+}
+
+
+.open-button:hover {
+
+  transform: translateY(-4px) scale(1.03);
+
+  background: #f2d56c;
+
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+
+  padding: 80px 20px;
+
+}
+
+
+.container {
+
+  max-width: 850px;
+
+  margin: auto;
+
+  text-align: center;
+
+}
+
+
+.section h2 {
+
+  font-family: "Playfair Display", serif;
+
+  color: #255c3c;
+
+  font-size: 32px;
+
+}
+
+
+.line {
+
+  width: 80px;
+
+  height: 3px;
+
+  background: #c79e2d;
+
+  margin: 20px auto 30px;
+
+}
+
+
+.gold {
+
+  background: #e1c154;
+}
+
+
+/* =========================
+   OPENING
+========================= */
+
+.opening {
+
+  background: #fffdf7;
+
+}
+
+
+.arabic {
+
+  font-size: 28px;
+
+  color: #286447;
+
+  margin-bottom: 25px;
+
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile {
+
+  background:
+    linear-gradient(
+      135deg,
+      #e9f0e8,
+      #f8f3e5
+    );
+
+}
+
+
+.islamic-symbol {
+
+  font-size: 45px;
+
+  color: #cba637;
+
+}
+
+
+.name {
+
+  font-family: "Playfair Display", serif;
+
+  color: #b08a21 !important;
+
+  font-size: clamp(38px, 8vw, 60px) !important;
+
+  line-height: 1.2;
+
+  margin: 20px 0;
+
+}
+
+
+.parents {
+
+  font-size: 20px;
+
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+
+  background: #173f2a;
+
+  color: white;
+
+}
+
+
+.countdown-section h2 {
+
+  color: #f0d061;
+
+}
+
+
+.countdown {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+
+  max-width: 650px;
+
+  margin: 35px auto 0;
+
+}
+
+
+.count-box {
+
+  padding: 20px 10px;
+
+  border-radius: 15px;
+
+  background:
+    rgba(255,255,255,.08);
+
+  border:
+    1px solid rgba(225,193,84,.5);
+
+  transition: .3s;
+
+}
+
+
+.count-box:hover {
+
+  transform:
+    translateY(-8px);
+
+  background:
+    rgba(255,255,255,.15);
+
+}
+
+
+.count-box span {
+
+  display: block;
+
+  font-size: 35px;
+
+  font-weight: bold;
+
+  color: #f0d061;
+
+}
+
+
+.count-box small {
+
+  color: white;
+
+}
+
+
+/* =========================
+   EVENT
+========================= */
+
+.event {
+
+  background: #fffdf7;
+
+}
+
+
+.event-card {
+
+  max-width: 650px;
+
+  margin: auto;
+
+  padding: 40px 25px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  border-top: 5px solid #d4af37;
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.08);
+
+  transition: .4s;
+
+}
+
+
+.event-card:hover {
+
+  transform:
+    translateY(-8px);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.13);
+
+}
+
+
+.event-icon {
+
+  font-size: 50px;
+
+  margin-bottom: 15px;
+
+}
+
+
+.event-card h3 {
+
+  font-size: 27px;
+
+  color: #286447;
+
+  margin-bottom: 20px;
+
+}
+
+
+.event-detail {
+
+  margin: 12px 0;
+
+  font-size: 18px;
+
+}
+
+
+/* =========================
+   LOCATION
+========================= */
+
+.location {
+
+  background: #eaf1e9;
+
+}
+
+
+.address {
+
+  font-size: 19px;
+
+  margin-bottom: 30px;
+
+}
+
+
+.button {
+
+  display: inline-block;
+
+  padding: 14px 27px;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  margin: 7px;
+
+  transition: .3s;
+
+}
+
+
+.button:hover {
+
+  transform:
+    translateY(-4px);
+
+}
+
+
+.maps {
+
+  background: #286447;
+
+  color: white;
+
+}
+
+
+.whatsapp {
+
+  background: #25d366;
+
+  color: white;
+
+}
+
+
+/* =========================
+   RSVP
+========================= */
+
+.rsvp {
+
+  background: #fffdf7;
+
+}
+
+
+/* =========================
+   CLOSING
+========================= */
+
+.closing {
+
+  background: #173f2a;
+
+  color: white;
+
+}
+
+
+.closing .arabic {
+
+  color: #efd066;
+
+  margin-bottom: 30px;
+
+}
+
+
+.closing h3 {
+
+  margin-top: 35px;
+
+  color: #efd066;
+
+}
+
+
+.closing h4 {
+
+  font-size: 20px;
+
+  margin-top: 15px;
+
+  font-weight: normal;
+
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+
+  position: fixed;
+
+  z-index: 999;
+
+  right: 20px;
+
+  bottom: 20px;
+
+  width: 50px;
+
+  height: 50px;
+
+  border: 2px solid #d4af37;
+
+  border-radius: 50%;
+
+  background: #173f2a;
+
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,.25);
+
+  animation:
+    musicSpin 3s linear infinite;
+
+}
+
+
+@keyframes musicSpin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.reveal {
+
+  opacity: 0;
+
+  transform:
+    translateY(50px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+
+}
+
+
+.reveal.active {
+
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+  text-align: center;
+
+  padding: 20px;
+
+  background: #0e2c1d;
+
+  color: #bbb;
+
+  font-size: 14px;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .section {
+
+    padding: 60px 18px;
+
+  }
+
+
+  .countdown {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+
+  .count-box span {
+
+    font-size: 28px;
+
+  }
+
+
+  .arabic {
+
+    font-size: 23px;
+
+  }
+
+
+  .cover h1 {
+
+    font-size: 45px;
+
+  }
+
+}
